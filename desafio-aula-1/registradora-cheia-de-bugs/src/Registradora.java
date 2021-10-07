@@ -3,7 +3,7 @@ public class Registradora {
 
     public static void main(String[] args) {
         try {
-            primeiroBug();
+              primeiroBug();
 
         } catch (RuntimeException ex) {
             System.out.println(ex.getMessage() + "\n");
@@ -82,6 +82,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
     }
 
     private static void segundoBug() {
@@ -92,6 +93,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
     }
 
     private static void terceiroBug() {
@@ -102,6 +104,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
     }
 
     private static void quartoBug() {
@@ -113,6 +116,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
 
         // Cliente 2
         String item2 = "sanduiche";
@@ -121,6 +125,7 @@ public class Registradora {
         double precoTotal2 = registrarItem(item2, quantidade2);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal2));
+        System.out.println("\n");
     }
 
     private static void quintoBug() {
@@ -131,6 +136,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
     }
 
     private static void sextoBug() {
@@ -142,6 +148,7 @@ public class Registradora {
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));
+        System.out.println("\n");
 
         // Cliente 2
         String item2 = "sanduiche";
@@ -150,6 +157,7 @@ public class Registradora {
         double precoTotal2 = registrarItem(item2, quantidade2);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal2));
+        System.out.println("\n");
     }
 
 }

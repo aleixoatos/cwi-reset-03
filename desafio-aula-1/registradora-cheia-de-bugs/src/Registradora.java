@@ -14,6 +14,14 @@ public class Registradora {
 //
           sextoBug();
     }
+    private static double retornaPrecoReposicao(String item, int quantidade) {
+        double precoItem = 0;
+        precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);
+        EstoqueAtual.atualizaEstoque(item, quantidade);
+        System.out.println("Saindo " + quantidade + " " + item + "s.");
+        QuantidadeMinimaItem.checaReposicao(item);
+        return precoItem;
+    }
 
     private static double registrarItem(String item, int quantidade) {
         double precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);

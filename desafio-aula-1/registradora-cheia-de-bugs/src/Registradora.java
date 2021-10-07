@@ -10,9 +10,9 @@ public class Registradora {
 //
 //        quartoBug();
 //
-          quintoBug();
+//        quintoBug();
 //
-//        sextoBug();
+          sextoBug();
     }
 
     private static double registrarItem(String item, int quantidade) {

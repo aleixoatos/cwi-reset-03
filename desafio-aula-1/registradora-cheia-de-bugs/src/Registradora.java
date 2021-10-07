@@ -2,17 +2,43 @@
 public class Registradora {
 
     public static void main(String[] args) {
-//        primeiroBug();
+        try {
+            primeiroBug();
 
-//        segundoBug();
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+        try {
+            //segundoBug();
 
-//        terceiroBug();
-//
-//        quartoBug();
-//
-//        quintoBug();
-//
-          sextoBug();
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+        try {
+            //terceiroBug();
+
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+        try {
+            //quartoBug();
+
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+        try {
+            //quintoBug();
+
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+        try {
+            //sextoBug();
+
+        } catch (RuntimeException ex) {
+            System.out.println(ex.getMessage() + "\n");
+        }
+
     }
     private static double retornaPrecoReposicao(String item, int quantidade) {
         double precoItem = 0;

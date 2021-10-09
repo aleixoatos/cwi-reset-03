@@ -6,24 +6,22 @@ public class Filme {
     private Double duração;
     private Integer anoLancamento;
     private Integer avaliacao;
-    private String nomeDiretor;
-    private Integer idadeDiretor;
-    private Integer filmesDirigidos;
+    private Diretor diretor;
 
-    public Filme (String nome, String descricao, Double duração, Integer anoLancamento, Integer avaliacao, String nomeDiretor){
+    public Filme (String nome, String descricao, Double duração, Integer anoLancamento, Integer avaliacao, Diretor diretor){
         this.nome = nome;
         this. descricao = descricao;
         this. duração = duração;
         this.anoLancamento = anoLancamento;
         this.avaliacao = avaliacao;
-        this.nomeDiretor = nomeDiretor;
+        this.diretor = diretor;
     }
 
     public void reproduzirFilme(){
         System.out.println(this.nome);
         System.out.println(this.descricao);
         System.out.println(this.duração);
-        System.out.println(this.nomeDiretor);
+        System.out.println(diretor.getNomeDiretor());
         System.out.println("\n");
     }
 

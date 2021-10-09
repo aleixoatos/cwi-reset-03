@@ -10,7 +10,7 @@ public class Aplicacao {
         //filme1.reproduzirFilme();
         //filme2.reproduzirFilme();
 
-        diretor.dados();
-        ator.dados();
+        diretor.atributos();
+        ator.atributos();
     }
 }

@@ -21,7 +21,7 @@ public class Filme {
         System.out.println(this.nome);
         System.out.println(this.descricao);
         System.out.println(this.duração);
-        System.out.println(diretor.getNomeDiretor());
+        //System.out.println(diretor.());
         System.out.println("\n");
     }
 

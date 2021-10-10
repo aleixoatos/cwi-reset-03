@@ -1,4 +1,4 @@
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private Integer idade;
     private Genero genero;
@@ -13,5 +13,8 @@ public class Pessoa {
         System.out.println("Nome: " + nome);
         System.out.println("Nome: " + idade);
         System.out.println("Nome: " + genero.getDescrição());
+    }
+    public String getNome(){
+        return nome;
     }
 }

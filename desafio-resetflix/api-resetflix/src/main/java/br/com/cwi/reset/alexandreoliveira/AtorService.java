@@ -11,8 +11,22 @@ public class AtorService {
         this.fakeDatabase = fakeDatabase;
     }
 
-    public void criarAtor(AtorRequest atorRequest){
+    public void criarAtor(AtorRequest atorRequest) {
         fakeDatabase.persisteAtor(atorRequest);
+    }
+
+    public List listarAtoresEmAtividade() throws AtorInvalidoException {
+        List<Ator> emAtividade = null;
+        if(fakeDatabase.recuperaAtores() == null){
+            throw new AtorInvalidoException("Nenhum ator cadastrado, favor cadastrar atores!");
+        }
+        for (int i = 0; i < fakeDatabase.recuperaAtores().size(); i++) {
+            Ator teste = (Ator) fakeDatabase.recuperaAtores().get(i);
+            if (teste.getStatusCarreira() == StatusCarreira.EM_ATIVIDADE) {
+                emAtividade.add(teste);
+            }
+        }
+        return emAtividade;
     }
 
     // Demais métodos da classe

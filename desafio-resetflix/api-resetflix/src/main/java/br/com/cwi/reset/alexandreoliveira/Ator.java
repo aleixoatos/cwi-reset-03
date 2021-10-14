@@ -10,7 +10,7 @@ public class Ator {
     private StatusCarreira statusCarreira;
     private Integer anoInicioAtividade;
 
-    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException, IdadeInvalidaException {
+    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException, IdadeInvalidaException, AnoInicioInvalidoException {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.statusCarreira = statusCarreira;
@@ -23,6 +23,9 @@ public class Ator {
         if (!comparaData()) {
             throw new IdadeInvalidaException("Não é possível cadastrar atores não nascidos!");
         }
+        if (comparaInicio()){
+            throw new AnoInicioInvalidoException("Ano de início de atividade inválido para o ator cadastrado!");
+        }
     }
 
     public static Integer geraId() {
@@ -31,8 +34,13 @@ public class Ator {
 
     public boolean comparaData() {
         LocalDate dataAtual = LocalDate.now();
-        LocalDate nascimento = dataNascimento;
         return dataNascimento.isBefore(dataAtual);
+    }
+
+    public boolean comparaInicio() {
+
+        int anoNascimento = dataNascimento.getYear();
+        return anoNascimento > anoInicioAtividade;
     }
 
     public static Integer getId() {

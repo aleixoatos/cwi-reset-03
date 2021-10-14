@@ -10,21 +10,29 @@ public class Ator {
     private StatusCarreira statusCarreira;
     private Integer anoInicioAtividade;
 
-    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException {
+    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException, IdadeInvalidaException {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.statusCarreira = statusCarreira;
         this.anoInicioAtividade = anoInicioAtividade;
         geraId();
 
-        if(nome.indexOf(" ") == -1){
-            throw new AtorInvalidoException("Deve ser informado no mínimo nome e sobrenome para o ator");
+        if (nome.indexOf(" ") == -1) {
+            throw new AtorInvalidoException("Deve ser informado no mínimo nome e sobrenome para o ator!");
         }
-
+        if (!comparaData()) {
+            throw new IdadeInvalidaException("Não é possível cadastrar atores não nascidos!");
+        }
     }
 
-    public static Integer geraId(){
+    public static Integer geraId() {
         return id++;
+    }
+
+    public boolean comparaData() {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate nascimento = dataNascimento;
+        return dataNascimento.isBefore(dataAtual);
     }
 
     public static Integer getId() {

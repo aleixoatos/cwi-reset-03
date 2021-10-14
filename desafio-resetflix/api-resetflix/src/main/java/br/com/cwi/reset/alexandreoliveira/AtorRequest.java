@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class AtorRequest extends Ator {
 
-    public AtorRequest(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException {
+    public AtorRequest(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException, IdadeInvalidaException {
         super(nome, dataNascimento, statusCarreira, anoInicioAtividade);
     }
 }

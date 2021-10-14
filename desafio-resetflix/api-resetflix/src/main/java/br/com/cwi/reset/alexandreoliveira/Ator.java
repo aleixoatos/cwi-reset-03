@@ -1,6 +1,7 @@
 package br.com.cwi.reset.alexandreoliveira;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Ator {
 
@@ -10,7 +11,7 @@ public class Ator {
     private StatusCarreira statusCarreira;
     private Integer anoInicioAtividade;
 
-    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException, IdadeInvalidaException, AnoInicioInvalidoException {
+    public Ator(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) throws AtorInvalidoException {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.statusCarreira = statusCarreira;
@@ -21,10 +22,10 @@ public class Ator {
             throw new AtorInvalidoException("Deve ser informado no mínimo nome e sobrenome para o ator!");
         }
         if (!comparaData()) {
-            throw new IdadeInvalidaException("Não é possível cadastrar atores não nascidos!");
+            throw new AtorInvalidoException("Não é possível cadastrar atores não nascidos!");
         }
-        if (comparaInicio()){
-            throw new AnoInicioInvalidoException("Ano de início de atividade inválido para o ator cadastrado!");
+        if (comparaInicio()) {
+            throw new AtorInvalidoException("Ano de início de atividade inválido para o ator cadastrado!");
         }
     }
 
@@ -38,7 +39,6 @@ public class Ator {
     }
 
     public boolean comparaInicio() {
-
         int anoNascimento = dataNascimento.getYear();
         return anoNascimento > anoInicioAtividade;
     }

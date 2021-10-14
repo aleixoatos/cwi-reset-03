@@ -8,5 +8,10 @@ public class AtorService {
         this.fakeDatabase = fakeDatabase;
     }
 
+    public void criarAtor(AtorRequest atorRequest){
+
+
+    }
+
     // Demais métodos da classe
 }

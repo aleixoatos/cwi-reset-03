@@ -10,6 +10,7 @@ public class Aplicacao {
         FakeDatabase fakeDatabase = new FakeDatabase();
 
         AtorService atorService = new AtorService(fakeDatabase);
+        DiretorService diretorService = new DiretorService(fakeDatabase);
 
         String nome = "Will Smith";
         LocalDate dataNascimento = LocalDate.of(1968, Month.SEPTEMBER, 25);
